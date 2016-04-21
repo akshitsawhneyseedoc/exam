@@ -1,0 +1,71 @@
+<div id="login" class="container">
+  <div class="row-fluid">
+    <div class="span12">
+      <div class="login well well-small">
+        <div class="center">
+          <img src="http://placehold.it/250x100&text=Logo" alt="logo"> 
+        </div>
+        <div class="form1" ng-if="!registrationFlag">
+        <form action="/users/login" style="" class="login-form" id="UserLoginForm" method="post" accept-charset="utf-8">
+          <div class="control-group">
+            <div class="input-prepend">
+              <span class="add-on"><i class="icon-user"></i></span>
+              <input name="data[User][username]" required="required" placeholder="Username" maxlength="255" type="text" id="UserUsername" ng-model="userNameVariable"> 
+            </div>
+          </div>
+          <div class="control-group">
+            <div class="input-prepend">
+              <span class="add-on"><i class="icon-lock"></i></span>
+              <input name="data[User][password]" required="required" placeholder="Password" type="password" id="UserPassword" ng-model="passwordVariable"> 
+            </div>
+          </div>
+          <div class="control-group">
+            <label id="remember-me">
+              <input type="checkbox" name="data[User][remember_me]" value="1" id="UserRememberMe"> Remember Me?</label>
+              <button ng-click="registerButton()">Register</button>
+          </div>
+          <div class="control-group">
+            <input class="btn btn-primary btn-large btn-block" type="button" value="Sign in" ng-click="login()"> 
+          </div>
+        </form>
+        </div>
+        <div class=form2 ng-if="registrationFlag">
+        <form action="/users/login" style="" class="login-form" id="UserLoginForm" method="post" accept-charset="utf-8">
+          <div class="control-group">
+            <div class="input-prepend">
+              <span class="add-on"><i class="icon-user"></i></span>
+              <input name="data[User][FullName]" required="required" placeholder="Full Name" maxlength="255" type="text" id="RegisterFullName" ng-model="RegisterFullName"> 
+            </div>
+          </div>
+          <div class="control-group">
+            <div class="input-prepend">
+              <span class="add-on"><i class="icon-user"></i></span>
+              <input name="data[User][email]" required="required" placeholder="Email" maxlength="255" type="text" id="RegisterEmail" ng-model="RegisterEmail"> 
+            </div>
+          </div>
+          <div class="control-group">
+            <div class="input-prepend">
+              <span class="add-on"><i class="icon-lock"></i></span>
+              <input name="data[User][password]" required="required" placeholder="Password" type="password" id="RegisterPassword" ng-model="RegisterPassword"> 
+            </div>
+          </div>
+          <div class="control-group">
+            <div class="input-prepend">
+              <span class="add-on"><i class="icon-lock"></i></span>
+              <input name="data[User][Retype Password]" required="required" placeholder="Retype Password" type="password" id="RegisterRetypePassword" ng-model="RegisterRetypePassword"> 
+            </div>
+          </div>
+          <div class="control-group">
+          <label id="remember-me">
+              <input type="checkbox" name="data[User][remember_me]" value="1" id="UserRememberMe"> I agree to the terms.</label>
+          </div>
+          <div class="control-group">
+            <input class="btn btn-primary btn-large btn-block" type="button" value="Register" ng-click="register()"> 
+          </div>
+        </form>
+        </div>
+
+      </div><!--/.login-->
+    </div><!--/.span12-->
+  </div><!--/.row-fluid-->
+</div><!--/.container-->
